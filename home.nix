@@ -61,6 +61,34 @@
   # through Home Manager then you have to manually source 'hm-session-vars.sh'
   programs.zsh = {
     enable = true;
+
+    # Enable and configure Prezto
+    prezto = {
+      enable = true;
+
+      # Load modules in a specific order (replaces the old 'zpreztorc' pmodules list)
+      pmodules = [
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "spectrum"
+        "utility"
+        "completion"
+        "git"
+        "syntax-highlighting"
+        "history-substring-search"
+        "prompt"
+      ];
+
+      # Configure specific Prezto modules directly in Nix
+      prompt.theme = "sorin"; # Choose your preferred Prezto theme
+
+      editor.dotExpansion = true; # Automatically convert '....' to '../..'
+
+      utility.safeOps = true; # Prompts before executing cp, ln, mv, rm
+    };
     shellAliases = {
       sshtom = "ssh tomer20116262@100.73.215.66";
     };
