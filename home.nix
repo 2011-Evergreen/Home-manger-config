@@ -5,7 +5,8 @@
   # manage.
   home.username = "tomer20116262";
   home.homeDirectory = "/home/tomer20116262";
-
+   
+   targets.genericLinux.enable = true;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -91,6 +92,8 @@
     };
     shellAliases = {
       sshtom = "ssh tomer20116262@100.73.215.66";
+      b="cd ..";
+      smb = "cd sambashare";
     };
   };
 
